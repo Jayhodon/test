@@ -23,8 +23,20 @@ module.exports={
 			{test:/\.less$/,use:['style-loader','css-loader','less-loader']},
 			{test:/\.scss$/,use:['style-loader','css-loader','sass-loader']},
 			{test:/\.vue$/,use:'vue-loader'},
-			{test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader'}
-		]
+			{test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader'},
+			{test: /\.(png|jpg|gif|svg)$/, use: 'url-loader?esModule=false'}
+			// [
+	  //         	{
+	  //           	loader: 'url-loader',
+	  //           	options: {
+	  //            	esModule: false, // 不加的话会有这种情况 img属性src="[object Module]"
+	  //             	name: '[name].[hash:8].[ext]'
+	  //           		}
+	  //         		}
+	  //       	]
+	  //   	}
+
+			]
 	}
 }
 
