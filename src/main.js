@@ -14,7 +14,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+Vue.http.options.root = 'http://www.liulongbin.top:3005'
 import router from './router.js'
+
+// 导入格式化时间的插件
+import moment from 'moment'
+// 定义全局的过滤器
+Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+  return moment(dataStr).format(pattern)
+})
+
 import app from './App.vue'
 
 import './lib/mui/css/mui.min.css'
@@ -24,10 +33,15 @@ import MintUI from 'mint-ui'
 Vue.use(MintUI)
 import 'mint-ui/lib/style.css'
 
-$(function(){
-	$('li:odd').css('backgroundColor','cyan')
-	$('li:even').css('backgroundColor','darkcyan')
-})
+// 安装 图片预览插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
+
+//隔行变色
+// $(function(){
+// 	$('li:odd').css('backgroundColor','cyan')
+// 	$('li:even').css('backgroundColor','darkcyan')
+// })
 
 
 
