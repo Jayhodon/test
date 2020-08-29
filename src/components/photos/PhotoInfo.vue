@@ -11,7 +11,6 @@
     <!-- 缩略图区域 -->
     <div class="thumbs">
       <vue-preview :slides="list"></vue-preview>
-
     </div>
 
     <!-- 图片内容区域 -->
@@ -90,17 +89,20 @@ export default {
     line-height: 30px;
   }
 
-  .thumbs{
-    img{
-      margin: 10px;
-      box-shadow: 0 0 8px #999;
+  .thumbs {
+    /deep/    //深度选择器
+    .my-gallery {
+       display: flex;
+       flex-wrap: wrap;
+       figure {
+         width: 30%;
+         margin: 5px;
+         img {
+          width: 100%;
+        }
+      }
     }
-    display: flex;
-  }
-
-  .my-gallery{
-    height:300px;
-  }
+}
 
 
 }

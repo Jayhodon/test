@@ -35,7 +35,7 @@
     </div>
 
 
-    <mt-button type="danger" size="large" @click="getMore">加载更多</mt-button>
+    <mt-button type="danger" size="large" style="display:block" @click="getMore">加载更多</mt-button>
   </div>
 </template>
 
@@ -135,5 +135,10 @@ export default {
       }
     }
   }
+
+  .mint-button{
+    padding-bottom: 75px;
+  }
+
 }
 </style>

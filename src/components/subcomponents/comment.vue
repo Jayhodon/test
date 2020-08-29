@@ -19,6 +19,9 @@
     </div>
 
     <mt-button type="danger" size="large" plain @click="getMore">加载更多</mt-button>
+
+    <div class='height'></div>
+    
   </div>
 </template>
 
@@ -112,5 +115,10 @@ export default {
       }
     }
   }
+
+  .height{
+    height:75px
+  }
+
 }
 </style>
